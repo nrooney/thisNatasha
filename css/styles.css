@@ -6,6 +6,7 @@
 #5b5f77  #667 dimgray 
 */
 
+
 html { 
   background: url(/images/bg1600.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
@@ -13,16 +14,18 @@ html {
   -o-background-size: cover;
   background-size: cover;
   min-height:100%;
+  margin: 0;  
+  padding: 0;  
 }
 
 body {
-  margin: 0px;
-  padding: 0px;
   height:100%; 
   /* font-family: 'Source Sans Pro', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; */
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
   font-weight: 300;
   color: #2e2a1f;
+  margin: 0;  
+  padding: 0;  
 }
 
 header #photospace{
@@ -36,7 +39,17 @@ header #photospace{
 	line-height: inherit;
 	color: #fff;
 	font-weight: 900;
+	padding-top: 80px;
+	margin-top: 400px;
 }
+
+/*#thisNatasha{
+		-moz-transition: all 1s; 
+-webkit-transition: all 1s;  
+-ms-transition: all 1s;  
+-o-transition: all 1s;  
+transition: all 1s; 
+}*/
 
 #thisNatasha h1.is--fixed{
 	margin: 0;
@@ -52,6 +65,7 @@ header #photospace{
 #page {
 	clear: both;
 	background-color: #e4e4e7;
+	/*background-color: #fff;*/
 }
 
 #container {
@@ -105,6 +119,21 @@ pre {
 	font-weight: 400;
 	line-height: 18.5714302062988px;
 }
+
+section a, section a:visited{
+	color: #fff;
+	text-decoration: none;
+	color: #297a4d;
+	font-weight: 600;
+	/*background-color: #297a4d;
+	padding: 3px 5px;*/
+}
+
+section a:hover{
+	/*background-color: #c36d1d*/
+	color: #c36d1d;
+}
+
 
 #aboutme {
 	padding-top: 0;
@@ -172,12 +201,13 @@ pre {
 	pointer-events: none;
 }
 
-#footer {
+footer {
 	background-color: #000;
 	color: #fff;
+	padding: 0.5em 1em;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 700px) {
 	#container {
       margin: auto;
       max-width: 800px;
@@ -197,7 +227,7 @@ pre {
 	}
 
 	section{
-		padding: 1.4em 0 2.8em 0;
+		padding: 1.4em 0;
 	}
 
 	#social object{

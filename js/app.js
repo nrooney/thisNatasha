@@ -8,50 +8,30 @@
 	/*
 	 * functions
 	 */
-	function move(elem, amount) {
-
-		var top = 0
-
-		function frame() {
-			top = top + 5;  // update parameters 
-
-			elem.style.marginTop = top + 'px' // show frame 
-			console.log(top + 'px' + ' | ' + amount);
-
-			if (top >= amount)  // check finish condition
-		  		clearInterval(id)
-			}
-
-			var id = setInterval(frame, 5) // draw every 10ms
-	}
-
-
   
   	main = function() {
   		var title = document.getElementById('thisNatasha');
-  		var title_height = title.clientHeight;
-  		//title.style.marginTop = (window_height - 200) + "px";
-  		//var margin_top = (window_height - 200) + "px";
-  		var margin_top = (window_height - 200);
-  		move(title, margin_top);
+  		var title_height = parseInt(title.clientHeight + title.style.marginTop);
+  		title.style.marginTop = (window_height - 300) + "px";
 
-  		header_height = title_height + (window_height - 200);
+  		header_height = title_height + (window_height - 300);
 		console.log(header_height + " / " + title_height);
 
 		/*
 		 * Keeping a sticky header, no jquery
 		 */
 		function stickyScroll(e) {
-			//console.log("in function " + header_height + " | " + window.pageYOffset + " | " + (header_height - window.pageYOffset));
+			var page = document.getElementById('page');
 			var fix_class          = 'is--fixed';
 
 			if(header_height  - window.pageYOffset < title_height) {
-				title.childNodes[1].classList.add(fix_class); // NEED TO ADD CLASS
-				console.log('now');
+				title.childNodes[1].classList.add(fix_class); 
+				page.style.paddingTop = title_height + "px";
 			}
 
 			if(header_height  - window.pageYOffset > title_height) {
-				title.childNodes[1].classList.remove(fix_class); // NEED TO ADD CLASS
+				title.childNodes[1].classList.remove(fix_class); 
+				page.style.paddingTop = 0 + "px";
 			}
 		}
 
