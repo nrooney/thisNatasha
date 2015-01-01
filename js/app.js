@@ -11,11 +11,11 @@
   
   	main = function() {
   		var title = document.getElementById('thisNatasha');
-  		var title_height = parseInt(title.clientHeight + title.style.marginTop);
-  		title.style.marginTop = (window_height - 300) + "px";
+  		title.style.paddingTop = (window_height - 200) + "px";
+  		var title_height = title.clientHeight;
 
-  		header_height = title_height + (window_height - 300);
-		console.log(header_height + " / " + title_height);
+  		// header_height = title_height + (window_height - 200);
+		// console.log(title.clientHeight + " / " + title.style.paddingTop + " / " + title_height);
 
 		/*
 		 * Keeping a sticky header, no jquery
@@ -23,14 +23,19 @@
 		function stickyScroll(e) {
 			var page = document.getElementById('page');
 			var fix_class          = 'is--fixed';
+			var title_height_during_fixed = 120;
+			var title_margin_during_fixed = title_height_during_fixed - title.childNodes[1].clientHeight;
+			// console.log(title_margin_during_fixed + " | " + title_height + " | " + window.pageYOffset + " | " + (title_height  - window.pageYOffset));
 
-			if(header_height  - window.pageYOffset < title_height) {
-				title.childNodes[1].classList.add(fix_class); 
+			if(title_height  - window.pageYOffset < 120) {
+				title.classList.add(fix_class); 
+				title.style.paddingTop = title_margin_during_fixed + "px"; // eh!?
 				page.style.paddingTop = title_height + "px";
 			}
 
-			if(header_height  - window.pageYOffset > title_height) {
-				title.childNodes[1].classList.remove(fix_class); 
+			if(title_height  - window.pageYOffset >= 120) {
+				title.classList.remove(fix_class); 
+				title.style.paddingTop = (window_height - 200) + "px";
 				page.style.paddingTop = 0 + "px";
 			}
 		}
