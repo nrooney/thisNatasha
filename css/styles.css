@@ -11,10 +11,12 @@ html {
   min-height:100%;
   margin: 0;  
   padding: 0;  
+  height:100%;
 }
 
 body {
   height:100%; 
+  min-height:100%;
   /* font-family: 'Source Sans Pro', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; */
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
   font-weight: 300;
@@ -24,40 +26,25 @@ body {
 }
 
 header {
-   width: 100%;
-   height: 100%;
-   clear: both;
-   background: url(/images/bg1600.jpg) no-repeat center center fixed; 
-   	  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+	clear: both;
+	background: url(/images/bg400.jpg) no-repeat center center; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-color: #000;
 }
 
-#thisNatasha h1{
+#thisNatashamobile h1{
 	line-height: inherit;
 	color: #fff;
 	font-weight: 900;
+	padding-top: 4em;
 }
 
-/*#thisNatasha{
-		-moz-transition: all 1s; 
--webkit-transition: all 1s;  
--ms-transition: all 1s;  
--o-transition: all 1s;  
-transition: all 1s; 
-}*/
-
-#thisNatasha.is--fixed{
-	margin: 0;
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	transform: translateY(0);
-	background: url(/images/bg1600.jpg) no-repeat center center fixed;
-	background-size: cover;
-}	
+#thisNatasha {
+	display: none;
+}
 
 #page {
 	clear: both;
@@ -79,7 +66,7 @@ h1 {
 	font-size: 3em;
 	font-style: normal;
 	font-variant: normal;
-	font-weight: 200;
+	font-weight: 100;
 	text-shadow: 5px -5px 8px #2e2a1f;
 }
 h2 {
@@ -91,6 +78,7 @@ h2 {
 }
 h3 {
 	font-size: 1.5em;
+	margin-bottom: 0.5em;
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 500;
@@ -102,7 +90,7 @@ p {
 	font-weight: 400;
 	line-height: 1.5em;
 }
-blockquote {
+/*blockquote {
 	font-size: 21px;
 	font-style: normal;
 	font-variant: normal;
@@ -115,7 +103,7 @@ pre {
 	font-variant: normal;
 	font-weight: 400;
 	line-height: 18.5714302062988px;
-}
+}*/
 
 section a, section a:visited{
 	color: #fff;
@@ -129,6 +117,10 @@ section a, section a:visited{
 section a:hover{
 	/*background-color: #c36d1d*/
 	color: #c36d1d;
+}
+
+section .bold{
+	font-weight: 600;
 }
 
 
@@ -146,7 +138,7 @@ section a:hover{
 	position: fixed;
 	right: 0;
 	top: 0;
-	z-index: 1;
+	z-index: 2;
 	-webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: fadein 2s; /* Firefox < 16 */
         -ms-animation: fadein 2s; /* Internet Explorer */
@@ -179,10 +171,6 @@ section a:hover{
 #social ul li {
 	margin: 0px;
 	padding: 0;
-	/*border-left: 2px solid #fff;
-	border-right: 2px solid #fff;
-	border-top: 4px solid #fff;
-	border-bottom: 4px solid #fff;*/
 	float: left;
 	width: 3em;
 	height: 3em;
@@ -198,12 +186,56 @@ section a:hover{
 #social object{
 	height: 2em;
 	pointer-events: none;
+	font-size: 1em;
 }
+
+#container ul{
+	margin: 0;
+	padding: 0 0 0 1.9em;
+	line-height: 1.5em;
+	list-style-type: none;
+}
+
+#container ul li:before{ content: '\002014'; position:relative; left:-1em;}
+#container ul li{ text-indent:-1em; }
 
 footer {
 	background-color: #000;
-	color: #fff;
+	color: #777;
 	padding: 0.5em 1em;
+}
+
+footer p{
+	font-size: 0.7em;
+}
+
+footer a {
+	text-decoration: none;
+	color: #777;	
+}
+
+@media (min-width: 400px) {
+	header {
+		clear: both;
+		background: url(/images/bg600.jpg) no-repeat center center; 
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		background-color: #000;
+	}
+}
+
+@media (min-width: 600px) {
+	header {
+		clear: both;
+		background: url(/images/bg800.jpg) no-repeat center center; 
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		background-color: #000;
+	}
 }
 
 @media (min-width: 700px) {
@@ -236,9 +268,70 @@ footer {
 
 	#social object{
 		height: 3em;
+		/*font-size: 1.3em;*/
 	}
 
 	#social a{
 		padding: 0.5em;
 	}
+
+	#social .fa-flickr { font-size: 3em; }
+	#social .fa-google-plus { font-size: 3em; }
+	#social .fa-github { font-size: 3em; }
+	#social .fa-twitter { font-size: 3em; }
+	#social .fa-facebook { font-size: 3em; }
+
+	header {
+	clear: both;
+	background: url(/images/bg1000.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-color: #000;
+	}
+
+	#thisNatashamobile {
+		display: none;
+	}
+
+	#thisNatasha {
+		display: block;
+		padding-top: 400px;
+	}
+
+	#thisNatasha h1 {
+		line-height: inherit;
+		color: #fff;
+		font-weight: 900;
+	}
+
+	#thisNatasha.is--fixed{
+		z-index: 1;
+		margin: 0;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		transform: translateY(0);
+		background: url(/images/bg1000.jpg) no-repeat center center fixed;
+		background-size: cover;
+	}	
+}
+
+@media (min-width: 1000px) {
+	header {
+		clear: both;
+		background: url(/images/bg1600.jpg) no-repeat center center fixed; 
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		background-color: #000;
+	}
+
+	#thisNatasha.is--fixed{
+		background: url(/images/bg1600.jpg) no-repeat center center fixed;
+		background-size: cover;
+	}	
 }
